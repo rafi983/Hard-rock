@@ -27,18 +27,15 @@ const show_single_result = (get_data) => {
 
     const artist = single_element.artist.name;
     const title = single_element.title;
-    const preview = single_element.preview;
-
+    const song_link = single_element.link;
     set_result += `
                 <div class="single-result row align-items-center my-3 p-3">
                     <div class="col-md-9">
                         <h3 class="lyrics-name">${title}</h3>
                         <p class="author lead">Album by ${artist}</p>
-                         <audio controls>
-                            <source src="${preview}" type="audio/mpeg">
-                         </audio>
                     </div>
                     <div class="col-md-3 text-md-right text-center">
+                        <a href='${song_link}' target="_blank"><button id="get_song_btn" class="btn btn-success">Get Song</button></a>
                         <button id="get_lyrics_btn" onclick="get_lyrics('${artist}','${title}')" class="btn btn-success">Get Lyrics</button>
                     </div>
                 </div>`;
